@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Image Slider</title>
+</head>
+
+<body>
+  <div id="imageContainer1" class="imageContainer">
+    <img src="./assets/1.png" alt="picture 1" class="sliderImage shownImage">
+    <img src="./assets/2.png" alt="picture 2" class="sliderImage nextImage">
+    <img src="./assets/3.png" alt="picture 3" class="sliderImage">
+    <img src="./assets/4.png" alt="picture 4" class="sliderImage">
+    <img src="./assets/5.png" alt="picture 5" class="sliderImage prevImage">
+    <div class="imageFrame">
+      <div class="arrowContainer">
+        <img class="imageSliderLeftArrow arrow" src="assets/left-arrow.svg" alt="L" onclick="toPrevImage()">
+        <img class="imageSliderRightArrow arrow" src="assets/left-arrow.svg" alt="R" onclick="toNextImage()">
+      </div>
+      <div id="dotContainer1" class="dotContainer">
+
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

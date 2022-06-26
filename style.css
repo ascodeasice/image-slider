@@ -1,0 +1,86 @@
+:root {
+  --imageWidth: 50vw;
+  --imageHeight: calc(var(--imageWidth)/2.2);
+  --imageCount: 5;
+  --arrowSize: calc(var(--imageWidth)/15);
+  --dotSize: calc(var(--imageWidth)/20);
+}
+
+body {
+  margin: 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100vw;
+  height: var(--imageHeight);
+  display: grid;
+  justify-content: center;
+}
+
+/* only .shownImage will be shown */
+.sliderImage {
+  /* to hide the image, but still displaying */
+  height: 0;
+  width: 0;
+}
+
+.sliderImage.prevImage {
+  /* originally at right side of frame */
+  transform: translate(-100px);
+}
+
+.sliderImage.nextImage {
+  /* originally at left side of frame */
+  transform: translate(100px);
+}
+
+
+.sliderImage.shownImage {
+  width: var(--imageWidth);
+  height: var(--imageHeight);
+  /* back to center position after animation */
+  transform: translate(0);
+  transition: transform .22s ease-in-out;
+}
+
+.imageFrame {
+  position: absolute;
+  border: 2px solid black;
+  width: calc(var(--imageWidth) + 2 * var(--arrowSize));
+  height: calc(var(--imageHeight) + var(--dotSize));
+  left: calc((100vw - var(--imageWidth) - 2* var(--arrowSize)) /2);
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr min-content;
+}
+
+.arrowContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  width: var(--arrowSize);
+  height: var(--arrowSize);
+}
+
+.imageSliderRightArrow {
+  transform: rotate(180deg);
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: var(--dotSize);
+  height: var(--dotSize);
+}
+
+.dot.chosenDot {
+  filter: invert(95%) sepia(4%) saturate(162%) hue-rotate(22deg) brightness(87%) contrast(95%);
+}
